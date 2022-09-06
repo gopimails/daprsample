@@ -7,22 +7,8 @@ services:
       context: .
       dockerfile: MyFrontEnd/Dockerfile
 
-  myfrontend-dapr:
-    image: "daprio/daprd:latest"
-    command: [ "./daprd", "-app-id", "MyFrontEnd", "-app-port", "80" ]
-    depends_on:
-      - myfrontend
-    network_mode: "service:myfrontend"
-
   mybackend:
     image: ${DOCKER_REGISTRY-}mybackend
     build:
       context: .
       dockerfile: MyBackEnd/Dockerfile
-
-  mybackend-dapr:
-     image: "daprio/daprd:latest"
-     command: [ "./daprd", "-app-id", "MyBackEnd", "-app-port", "80" ]
-     depends_on:
-       - mybackend
-     network_mode: "service:mybackend"

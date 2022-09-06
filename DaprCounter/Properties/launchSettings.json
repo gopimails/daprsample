@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DaprCounter": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
